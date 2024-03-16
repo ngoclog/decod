@@ -1,11 +1,7 @@
 
 
     
-    function getParameterByName(name) {
-    var urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(name);
-}
-
+   
 function decodeText() {
     var encodedInput = document.getElementById('encodedInput').value;
     var decodedOutput = document.getElementById('decodedOutput');
