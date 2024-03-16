@@ -1,102 +1,81 @@
- (function() {
-        var currentDomain = window.location.hostname;
-        var allowedDomains = [&quot;ikode.shop&quot;, &quot;www.ikode.shop&quot;]; // Domain yang diperbolehkan
-        var allowedDomainRegex = new RegExp(&quot;^https?://(www\\.)?ikode\\.shop.*$&quot;);
-        if (!allowedDomainRegex.test(window.location.href)) {
-            console.error(&quot;Unauthorized access. Redirecting...&quot;);
-            
-            window.location.href = &quot;https://www.ikode.shop&quot;;
-        }
-    })();
-
-    
-    function getParameterByName(name) {
-        var urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
+(function() {
+    var currentDomain = window.location.hostname;
+    var allowedDomains = ["ikode.shop", "www.ikode.shop"]; // Domain yang diperbolehkan
+    var allowedDomainRegex = new RegExp("^https?://(www\\.)?ikode\\.shop.*$");
+    if (!allowedDomainRegex.test(window.location.href)) {
+        console.error("Unauthorized access. Redirecting...");
+        window.location.href = "https://www.ikode.shop";
     }
+})();
 
-    
-    function decodeText() {
-        var encodedInput = document.getElementById(&quot;encodedInput&quot;).value;
-        var decodedOutput = document.getElementById(&quot;decodedOutput&quot;);
-        var thankYouMessage = document.getElementById(&quot;thankYouMessage&quot;);
+function getParameterByName(name) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
 
-        
-        if (encodedData[encodedInput]) {
-            var originalText = encodedData[encodedInput];
-            decodedOutput.href = originalText;
-            decodedOutput.textContent = originalText;
-            thankYouMessage.style.display = &quot;block&quot;; 
-            
-            
-            setTimeout(function() {
-                window.open(originalText, &#39;_blank&#39;);
-            }, 3000);
-        } else {
-            decodedOutput.href = &quot;#&quot;;
-            decodedOutput.textContent = &quot;Teks tidak dapat didekode.&quot;;
-        }
-    }
+function decodeText() {
+    var encodedInput = document.getElementById("encodedInput").value;
+    var decodedOutput = document.getElementById("decodedOutput");
+    var thankYouMessage = document.getElementById("thankYouMessage");
 
     // Objek encodedData yang berisi data enkripsi
     var encodedData = {
-        &quot;STARS-248&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/str1.html&quot;,
-      &quot;stars-248&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/str1.html&quot;,
-        &quot;mimk-146&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/min1.html&quot;,
-      &quot;MIMK-146&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/min1.html&quot;,
-      &quot;MEYD-568&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/meg1.html&quot;,
-      &quot;meyd-568&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/meg1.html&quot;,
-      &quot;mide-730&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/SHO1.html&quot;,
-      &quot;MIDE-730&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/SHO1.html&quot;,
-      &quot;MIDV-614&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post.html&quot;,
-      &quot;midv-614&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post.html&quot;,
-      &quot;ipx-678&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/ipx-678.html&quot;,
-      &quot;IPX-678&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/ipx-678.html&quot;,
-      &quot;SONE-053&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/RIN1.html&quot;,
-      &quot;sone-053&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/RIN1.html&quot;,
-      &quot;ebwh-046&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/NAN.html&quot;,
-      &quot;EBWH-046&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/NAN.html&quot;,
-      &quot;IPZZ-185&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_08.html&quot;,
-      &quot;ipzz-185&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_08.html&quot;,
-      &quot;juq-579&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_276.html&quot;,
-      &quot;JUQ-579&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_276.html&quot;,
-      &quot;ROE-202&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_598.html&quot;,
-      &quot;roe-202&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_598.html&quot;,
-      &quot;stars-967&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_35.html&quot;,
-      &quot;STARS-967&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_35.html&quot;,
-      &quot;JUX-901&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_241.html&quot;,
-      &quot;jux-901&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_241.html&quot;,
-       &quot;dasd-875&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_804.html&quot;,
-      &quot;DASD-875&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_804.html&quot;,
-      &quot;WAAA-327&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/Kan1.html&quot;,
-      &quot;waaa-327&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/Kan1.html&quot;,
-      &quot;rbd-704&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/RIN1_01989340365.html&quot;,
-      &quot;RBD-704&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/RIN1_01989340365.html&quot;,
-      &quot;HMN-144&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/jul1.html&quot;,
-      &quot;hmn-144&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/jul1.html&quot;,
-       &quot;stars-895&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_09.html&quot;,
-      &quot;STARS-895&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_09.html&quot;,
-      &quot;SSIS-360&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_326.html&quot;,
-      &quot;ssis-360&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_326.html&quot;,
-      &quot;mmik-056&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_521.html&quot;,
-      &quot;MMIK-056&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_521.html&quot;,
-      &quot;FMDL-008&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/MEI1.html&quot;,
-      &quot;fmdl-008&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/MEI1.html&quot;,
-       &quot;miaa-625&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_12.html&quot;,
-      &quot;MIAA-625&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_12.html&quot;,
-      &quot;PPPE-096&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_720.html&quot;,
-      &quot;pppe-096&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_720.html&quot;,
-      &quot;juq-623&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_440.html&quot;,
-      &quot;JUQ-623&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_440.html&quot;,
-      &quot;BBAN-462&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_14.html&quot;,
-      &quot;bban-462&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_14.html&quot;,
-       &quot;waaa-351&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_119.html&quot;,
-      &quot;WAAA-351&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_119.html&quot;,
-      &quot;CAWD-507&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_634.html&quot;,
-      &quot;cawd-507&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_634.html&quot;,
-      &quot;vec-530&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_518.html&quot;,
-      &quot;VEC-530&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_518.html&quot;,
-        &quot;DASS-258&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_15.html&quot;,
-      &quot;dass-258&quot;: &quot;https://basejs1flexbox.blogspot.com/2024/03/blog-post_15.html&quot;,
-      
-    };
+    "STARS-248": "https://basejs1flexbox.blogspot.com/2024/03/str1.html",
+    "stars-248": "https://basejs1flexbox.blogspot.com/2024/03/str1.html",
+    "mimk-146": "https://basejs1flexbox.blogspot.com/2024/03/min1.html",
+    "MIMK-146": "https://basejs1flexbox.blogspot.com/2024/03/min1.html",
+    "MEYD-568": "https://basejs1flexbox.blogspot.com/2024/03/meg1.html",
+    "meyd-568": "https://basejs1flexbox.blogspot.com/2024/03/meg1.html",
+    "mide-730": "https://basejs1flexbox.blogspot.com/2024/03/SHO1.html",
+    "MIDE-730": "https://basejs1flexbox.blogspot.com/2024/03/SHO1.html",
+    "MIDV-614": "https://basejs1flexbox.blogspot.com/2024/03/blog-post.html",
+    "midv-614": "https://basejs1flexbox.blogspot.com/2024/03/blog-post.html",
+    "ipx-678": "https://basejs1flexbox.blogspot.com/2024/03/ipx-678.html",
+    "IPX-678": "https://basejs1flexbox.blogspot.com/2024/03/ipx-678.html",
+    "SONE-053": "https://basejs1flexbox.blogspot.com/2024/03/RIN1.html",
+    "sone-053": "https://basejs1flexbox.blogspot.com/2024/03/RIN1.html",
+    "ebwh-046": "https://basejs1flexbox.blogspot.com/2024/03/NAN.html",
+    "EBWH-046": "https://basejs1flexbox.blogspot.com/2024/03/NAN.html",
+    "IPZZ-185": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_08.html",
+    "ipzz-185": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_08.html",
+    "juq-579": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_276.html",
+    "JUQ-579": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_276.html",
+    "ROE-202": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_598.html",
+    "roe-202": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_598.html",
+    "stars-967": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_35.html",
+    "STARS-967": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_35.html",
+    "JUX-901": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_241.html",
+    "jux-901": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_241.html",
+    "dasd-875": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_804.html",
+    "DASD-875": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_804.html",
+    "WAAA-327": "https://basejs1flexbox.blogspot.com/2024/03/Kan1.html",
+    "waaa-327": "https://basejs1flexbox.blogspot.com/2024/03/Kan1.html",
+    "rbd-704": "https://basejs1flexbox.blogspot.com/2024/03/RIN1_01989340365.html",
+    "RBD-704": "https://basejs1flexbox.blogspot.com/2024/03/RIN1_01989340365.html",
+    "HMN-144": "https://basejs1flexbox.blogspot.com/2024/03/jul1.html",
+    "hmn-144": "https://basejs1flexbox.blogspot.com/2024/03/jul1.html",
+    "stars-895": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_09.html",
+    "STARS-895": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_09.html",
+    "SSIS-360": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_326.html",
+    "ssis-360": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_326.html",
+    "mmik-056": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_521.html",
+    "MMIK-056": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_521.html",
+    "FMDL-008": "https://basejs1flexbox.blogspot.com/2024/03/MEI1.html",
+    "fmdl-008": "https://basejs1flexbox.blogspot.com/2024/03/MEI1.html",
+    "miaa-625": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_12.html",
+    "MIAA-625": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_12.html",
+    "PPPE-096": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_720.html",
+    "pppe-096": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_720.html",
+    "juq-623": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_440.html",
+    "JUQ-623": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_440.html",
+    "BBAN-462": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_14.html",
+    "bban-462": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_14.html",
+    "waaa-351": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_119.html",
+    "WAAA-351": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_119.html",
+    "CAWD-507": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_634.html",
+    "cawd-507": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_634.html",
+    "vec-530": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_518.html",
+    "VEC-530": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_518.html",
+    "DASS-258": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_15.html",
+    "dass-258": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_15.html"
+}
