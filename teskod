@@ -14,15 +14,20 @@ function decodeText(encodedInput) {
 
 // Fungsi untuk memanggil fungsi decodeText
 function generateLink() {
-    var encodedInput = document.getElementById("encodedInput").value;
-    var decodedOutput = document.getElementById("decodedOutput");
+    try {
+        var encodedInput = document.getElementById("encodedInput").value;
+        var decodedOutput = document.getElementById("decodedOutput");
 
-    var decodedLink = decodeText(encodedInput);
-    if (decodedLink) {
-        decodedOutput.href = decodedLink;
-        decodedOutput.textContent = decodedLink;
-    } else {
-        decodedOutput.href = "#";
-        decodedOutput.textContent = "Teks tidak dapat didekode.";
+        var decodedLink = decodeText(encodedInput);
+        if (decodedLink) {
+            decodedOutput.href = decodedLink;
+            decodedOutput.textContent = decodedLink;
+        } else {
+            decodedOutput.href = "#";
+            decodedOutput.textContent = "Teks tidak dapat didekode.";
+        }
+    } catch (error) {
+        console.error("Terjadi kesalahan:", error);
+        alert("Terjadi kesalahan. Silakan cek konsol browser untuk informasi lebih lanjut.");
     }
 }
