@@ -1,12 +1,4 @@
-(function() {
-    var currentDomain = window.location.hostname;
-    var allowedDomains = ["ikode.shop", "www.ikode.shop"]; // Domain yang diperbolehkan
-    var allowedDomainRegex = new RegExp("^https?://(www\\.)?ikode\\.shop.*$");
-    if (!allowedDomainRegex.test(window.location.href)) {
-        console.error("Unauthorized access. Redirecting...");
-        window.location.href = "https://www.ikode.shop";
-    }
-})();
+();
 
 function getParameterByName(name) {
     var urlParams = new URLSearchParams(window.location.search);
