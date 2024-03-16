@@ -1,32 +1,33 @@
-// Fungsi untuk mendapatkan nilai parameter dari URL
-function getParameterByName(name) {
+
+
+    
+    function getParameterByName(name) {
     var urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
 
-// Dekode teks
 function decodeText() {
-    var encodedInput = document.getElementById("encodedInput").value;
-    var decodedOutput = document.getElementById("decodedOutput");
+    var encodedInput = document.getElementById('encodedInput').value;
+    var decodedOutput = document.getElementById('decodedOutput');
+    var thankYouMessage = document.getElementById('thankYouMessage');
 
-    // Dekode teks menggunakan objek encodedData
     if (encodedData[encodedInput]) {
         var originalText = encodedData[encodedInput];
         decodedOutput.href = originalText;
         decodedOutput.textContent = originalText;
+        thankYouMessage.style.display = 'block';
+
+        setTimeout(function() {
+            window.open(originalText, '_blank');
+        }, 3000);
     } else {
-        decodedOutput.href = "#";
-        decodedOutput.textContent = "Teks tidak dapat didekode.";
+        decodedOutput.href = '#';
+        decodedOutput.textContent = 'Teks tidak dapat didekode.';
     }
 }
 
-// Fungsi untuk memanggil fungsi decodeText
-function generateLink() {
-    decodeText(); // Memanggil fungsi decodeText untuk menghasilkan link
-}
-
-// Objek encodedData yang berisi data enkripsi
-var encodedData = {
+    // Objek encodedData yang berisi data enkripsi
+    var encodedData = {
     "STARS-248": "https://basejs1flexbox.blogspot.com/2024/03/str1.html",
     "stars-248": "https://basejs1flexbox.blogspot.com/2024/03/str1.html",
     "mimk-146": "https://basejs1flexbox.blogspot.com/2024/03/min1.html",
