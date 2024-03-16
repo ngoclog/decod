@@ -1,17 +1,48 @@
-();
+// Fungsi untuk memeriksa domain dan kunci rahasia
+function checkDomain() {
+    var currentDomain = window.location.hostname;
+    var allowedDomains = ["ikode.shop", "www.ikode.shop"]; // Domain yang diperbolehkan
+    var allowedDomainRegex = new RegExp("^https?://(www\\.)?ikode\\.shop.*$");
+    if (!allowedDomainRegex.test(window.location.href)) {
+        console.error("Unauthorized access. Redirecting...");
+        // Redirect ke halaman utama jika domain tidak diizinkan
+        window.location.href = "https://www.ikode.shop";
+    }
+}
 
+// Fungsi untuk mendapatkan nilai parameter dari URL
 function getParameterByName(name) {
     var urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(name);
 }
 
+// Dekode teks
 function decodeText() {
     var encodedInput = document.getElementById("encodedInput").value;
     var decodedOutput = document.getElementById("decodedOutput");
-    var thankYouMessage = document.getElementById("thankYouMessage");
 
-    // Objek encodedData yang berisi data enkripsi
-    var encodedData = {
+    // Dekode teks menggunakan objek encodedData
+    if (encodedData[encodedInput]) {
+        var originalText = encodedData[encodedInput];
+        decodedOutput.href = originalText;
+        decodedOutput.textContent = originalText;
+    } else {
+        decodedOutput.href = "#";
+        decodedOutput.textContent = "Teks tidak dapat didekode.";
+    }
+}
+
+// Fungsi untuk memanggil fungsi decodeText
+function generateLink() {
+    checkDomain(); // Memeriksa domain sebelum mengizinkan akses ke fungsi
+    decodeText(); // Menghasilkan tautan setelah memeriksa domain
+}
+
+// Kunci rahasia yang harus cocok dengan domain yang diizinkan
+var r = "amFuZ2FuIG1haW4gYW1iaWxzY3JpcHRkb25nIGphbmNvaw==";
+
+// Objek encodedData yang berisi data enkripsi
+var encodedData = {
     "STARS-248": "https://basejs1flexbox.blogspot.com/2024/03/str1.html",
     "stars-248": "https://basejs1flexbox.blogspot.com/2024/03/str1.html",
     "mimk-146": "https://basejs1flexbox.blogspot.com/2024/03/min1.html",
