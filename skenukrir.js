@@ -78,4 +78,6 @@ function decodeText() {
     "VEC-530": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_518.html",
     "DASS-258": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_15.html",
     "dass-258": "https://basejs1flexbox.blogspot.com/2024/03/blog-post_15.html"
+    "XVSR-728": "https://basejs1flexbox.blogspot.com/2024/03/AM1.html",
+      "xvsr-728": "https://basejs1flexbox.blogspot.com/2024/03/AM1.htm",
 }
